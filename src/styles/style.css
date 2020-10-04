@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    /* font-weight: 400; */
+    src: url("./font/Poppins-Medium.ttf");
+  }
+ 
+  @font-face {
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 400;
+    src: url("./font/Orbitron-Black.ttf");
+  }
+
+  .time-font{
+    font-family: 'Poppins';
+    font-weight: w300;
+    margin-right:10px;
+  }
+
+  .time-font2{
+    font-family: 'Orbitron';
+    font-weight: w300;
+    margin-right:10px;
+    letter-spacing: 2px;
+  }
