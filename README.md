@@ -1,2 +1,2 @@
-# Team-work-project
-teamwork front-end repository
+# React Todo-list
+
