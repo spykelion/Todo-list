@@ -1,4 +1,4 @@
-import React,{Component} from 'react'
+import React, {Component} from 'react'
 import Todos from './Todos'
 import TodoForm from './TodoForm'
 import Greeting from './Greeting'
@@ -11,6 +11,7 @@ class App extends Component{
        {id:2,content:"Meeting with clients"}
      ]
    }
+   // this works well
    deleteTodo=(id)=>{
     const todos = this.state.todos.filter(todo=>{
       return todo.id!==id
@@ -31,7 +32,8 @@ class App extends Component{
           <div className="right white-text "><Greeting /></div>
           <h3 className="white-text center"> Todo's List</h3>
         </nav>
-         <Todos todos={this.state.todos} deleteTodo={this.deleteTodo}  />
+         <Todos todos={this.state.todos} deleteTodo={this.deleteTodo}  /> {//Avoid Using components properties as function names or vice versa 
+         }
          <TodoForm addTodo={this.addTodo} />
          
        </div>

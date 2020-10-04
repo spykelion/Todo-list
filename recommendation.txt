@@ -1,0 +1,5 @@
+- A time could be added to the left of a todo.content {Time of creation}- that is {hr:min}
+- The greeting text: {time of the day} could also be centralized
+- A user should be able to edit a todo item and save.
+- user input validation. A string of len(0) or ASCIIcharacter(' ') {a.k.a space}. If a user inputs only those, the onclick button shouldn't be active anyway.
+    In a nutshell, a user must input something before adding to the todo list. Thanks.//More loading

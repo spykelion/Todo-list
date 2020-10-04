@@ -1,40 +1,42 @@
-import React,{useEffect,useState} from 'react'
+import React, { useEffect, useState } from 'react'
 
-function Greeting(){
-  const[hours,setDate] = useState(new Date())
-   var hr = hours.getHours()%12
-   var mn = hours.getMinutes()
-   var tm = hours.getSeconds()
-    
-    var period 
-    var timeOfDay
-    if(hr<12){
-      timeOfDay ="Good morning"
-      period="AM"   
-    }
-    else if(hr>=12 && hr <= 16 ){
-      timeOfDay ="Good afternoon"
-      period="PM"   
-    }
-    else if(hr>16 && hr <= 18 ){
-      timeOfDay ="Good evening"
-      period="PM"   
-    }
-    else{
-      timeOfDay ="Good Night"
-      period="PM"  
-    }
-          
-  useEffect(()=>{
-    setInterval(()=>{
-    setDate(new Date());
-    },1000)
+function Greeting() {
+  const [hours, setDate] = useState(new Date())
+  //. var hr = hours.getHours()%12
+  // Use hours.getHours()%24 to get time instead of hours.getHours()%12. This gets the exact Pc time if correct in a 24hour format. Works best
+  var hr = hours.getHours() % 24
+  var mn = hours.getMinutes()
+  var tm = hours.getSeconds()
+
+  var period
+  var timeOfDay
+  if (hr < 12) {
+    timeOfDay = "Good morning"
+    period = "AM"
+  }
+  else if (hr >= 12 && hr <= 16) {
+    timeOfDay = "Good afternoon"
+    period = "PM"
+  }
+  else if (hr > 16 && hr <= 18) {
+    timeOfDay = "Good evening"
+    period = "PM"
+  }
+  else {
+    timeOfDay = "Good Night"
+    period = "PM"
+  }
+
+  useEffect(() => {
+    setInterval(() => {
+      setDate(new Date());
+    }, 1000)
   });
 
-  return(
+  return (
     <div className="time-font2">
-       <h6><span>{timeOfDay}</span> <br/>
-        <span>{hours.toDateString()}{" "}{hr}:{mn}:{tm}{period}</span>
+      <h6><span>{timeOfDay}</span> <br />
+        <span>{hours.toDateString()}{" || "}{hr}:{mn}:{tm}{period}</span>
       </h6>
     </div>
   )
@@ -71,7 +73,7 @@ export default Greeting
 //     return(<div>
 //           <h6 style={{marginRight:10}}>{timeOfDay} <br/> {myDate} {" "} {timeDisplay}</h6>
 //         </div>)
-        
+
 //   }
 
 
