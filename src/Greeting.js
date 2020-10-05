@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 function Greeting() {
-  const [hours, setDate] = useState(new Date())
+  let [hours, setDate] = useState(new Date())
   //. var hr = hours.getHours()%12
   // Use hours.getHours()%24 to get time instead of hours.getHours()%12. This gets the exact Pc time if correct in a 24hour format. Works best
   var hr = hours.getHours() % 24
