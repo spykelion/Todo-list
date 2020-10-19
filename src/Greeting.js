@@ -31,11 +31,8 @@ function Greeting() {
     setInterval(() => {
       setDate(new Date());
     }, 1000)
-/// added this line for my cleanup. Tis prevents memeory leakage
-    return () => {
-      hours = new Date()
-      setDate(hours)
-    }
+/// added this line for my cleanup. This prevents memory leakage
+    return () => setDate(new Date())
   }, []);
 
   return (
